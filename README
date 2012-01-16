@@ -1,0 +1,8 @@
+WELCOME TO FACEBOOK DE-FRIENDER DETECTOR. 
+The way this project came to be was that I got sick of seeing my Facebook friend number change and not know what was going on, whether it was someone de-activating their Facebook account or someone de-friending me.
+
+SO HOW DOES THIS WORK? 
+The application requests basic access to your Facebook data, it then pulls your friend list and stores it into a database. Every subsequent launch of this application will diff the current list with the one stored in the database. Initially, the first time you run this application, you will not have any changes because we use this first run as the baseline. After we have a baseline, we can determine the subsequent changes.
+
+THIS IS COOL, BUT I WANT [INSERT FEATURE] 
+This is just the first iteration of the application and once I get the kinks out of the way, I'll start implementing other enhancements. If you are as excited as I am for this application, then leave your ideas and comments in the discussion section.
