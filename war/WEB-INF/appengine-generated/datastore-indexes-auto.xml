@@ -1,0 +1,11 @@
+<!-- Indices written at Mon, 7 Mar 2011 00:52:21 UTC -->
+
+<datastore-indexes>
+
+    <!-- Used 7 times in query history -->
+    <datastore-index kind="ActivityItem" ancestor="false" source="auto">
+        <property name="userId" direction="asc"/>
+        <property name="modifyTime" direction="desc"/>
+    </datastore-index>
+
+</datastore-indexes>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+	<application>fbdfdetect</application>
+	<version>2</version>
+	
+	<!-- Configure java.util.logging -->
+	<system-properties>
+		<property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
+	</system-properties>
+	
+	<sessions-enabled>true</sessions-enabled>
+	<precompilation-enabled>true</precompilation-enabled>
+	
+	 <static-files>
+        <include path="/**.png" />
+        <include path="/**.gif" />
+        <include path="/**.jpg" />
+        <include path="/**.css" />
+        <include path="/**.js" />
+        <include path="/**.ico" />
+     </static-files>
+	
+</appengine-web-app>

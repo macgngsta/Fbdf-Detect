@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<display-name>fbdfdetect</display-name>
+	<description>Facebook Defriender Detector</description>
+
+	<!-- START FILTER HIERARCHY -->
+	<filter>
+		<filter-name>ValidationFilter</filter-name>
+		<filter-class>com.gregtam.fbdfdetect.web.ValidationFilter</filter-class>
+	</filter>
+	
+	<filter>
+		<filter-name>FacebookAuthenticationFilter</filter-name>
+		<filter-class>com.gregtam.fbdfdetect.web.FacebookAuthenticationFilter</filter-class>
+	</filter>
+	
+	<filter>
+		<filter-name>SessionManagementFilter</filter-name>
+		<filter-class>com.gregtam.fbdfdetect.web.SessionManagerFilter</filter-class>
+	</filter>
+	<!-- END FILTER HIERARCHY -->
+	
+	<!-- START FILTER MAPPTING -->
+	<filter-mapping>
+		<filter-name>FacebookAuthenticationFilter</filter-name>
+		<url-pattern>/fb/auth/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>SessionManagementFilter</filter-name>
+		<url-pattern>/fb/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>ValidationFilter</filter-name>
+		<url-pattern>/fb/*</url-pattern>
+	</filter-mapping>
+	<!-- END FILTER MAPPING -->
+
+	<!-- START SERVLETS -->
+	<servlet>
+		<servlet-name>fbdfdetect</servlet-name>
+		<servlet-class>com.gregtam.fbdfdetect.FbdfdetectServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ProcessFriendsTask</servlet-name>
+		<servlet-class>com.gregtam.fbdfdetect.ProcessFriendsTask</servlet-class>
+	</servlet>
+	<!-- END SERVLETS -->
+	
+	<!-- START SERVLET MAPPING -->
+	<servlet-mapping>
+		<servlet-name>fbdfdetect</servlet-name>
+		<url-pattern>/fb/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ProcessFriendsTask</servlet-name>
+		<url-pattern>/tasks/processFriends</url-pattern>
+	</servlet-mapping>
+	<!-- END SERVLET MAPPING -->
+	
+	<!-- JSP RELATED -->
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+		<welcome-file>dashboard.jsp</welcome-file>
+		<welcome-file>errorApp.jsp</welcome-file>
+		<welcome-file>privacy.jsp</welcome-file>
+		<welcome-file>raw.jsp</welcome-file>
+	</welcome-file-list>
+
+	<error-page>
+		<exception-type>java.lang.RuntimeException</exception-type>
+		<location>/error.jsp</location>
+	</error-page>
+	<!-- END JSP RELATED -->
+</web-app>
