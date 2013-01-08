@@ -2,8 +2,8 @@ package com.gregtam.fbdfdetect.services;
 
 import java.util.logging.Logger;
 
-import com.google.appengine.repackaged.org.json.JSONException;
-import com.google.appengine.repackaged.org.json.JSONObject;
+import com.google.appengine.labs.repackaged.org.json.JSONException;
+import com.google.appengine.labs.repackaged.org.json.JSONObject;
 import com.gregtam.fbdfdetect.constants.FacebookConstants;
 import com.gregtam.fbdfdetect.helper.FacebookHelper;
 import com.gregtam.fbdfdetect.helper.IOUtil;

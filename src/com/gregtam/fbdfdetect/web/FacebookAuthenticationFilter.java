@@ -13,8 +13,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-import com.google.appengine.repackaged.org.json.JSONException;
-import com.google.appengine.repackaged.org.json.JSONObject;
+import com.google.appengine.labs.repackaged.org.json.JSONException;
+import com.google.appengine.labs.repackaged.org.json.JSONObject;
 import com.gregtam.fbdfdetect.constants.FacebookConstants;
 import com.gregtam.fbdfdetect.constants.FrameworkConstants;
 import com.gregtam.fbdfdetect.helper.FacebookHelper;
